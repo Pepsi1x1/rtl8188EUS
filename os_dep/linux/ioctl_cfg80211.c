@@ -4245,6 +4245,9 @@ static int	cfg80211_rtw_del_station(struct wiphy *wiphy, struct net_device *ndev
 #endif
 #endif
 {
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4,1,0))
+	const u8 *mac = params->mac;
+#endif
 	int ret=0;
 	_irqL irqL;
 	_list	*phead, *plist;
