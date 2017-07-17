@@ -4239,11 +4239,11 @@ static int cfg80211_rtw_del_station(struct wiphy *wiphy, struct net_device *ndev
 #else
 static int	cfg80211_rtw_del_station(struct wiphy *wiphy, struct net_device *ndev,
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,16,0))
-	u8 *mac
+	u8 *mac)
 #else
-	const u8 *mac
+	const u8 *mac)
 #endif
-)
+#endif
 {
 	int ret=0;
 	_irqL irqL;
