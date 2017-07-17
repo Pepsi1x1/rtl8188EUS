@@ -13,6 +13,18 @@ Instructions, tested on Ubuntu 16.04 with 4.4.0-59-generic #80-Ubuntu SMP
 
 I'm using a TP-Link TL-WN722N version 2.1.
 
+On Kali ensure your sources.list has the deb src line uncommented
+
+```
+nano /etc/apt/sources.list
+```
+
+and then run
+
+```
+apt-get update
+```
+
 ```
 apt-get install linux-headers-$(uname -r)
 apt-get install binutils
@@ -31,14 +43,6 @@ cp /boot/config-$(uname -r) .config
 # Export the path where you downloaded the source.
 export KSRC=$PWD
 ```
-
-The following commands may be necessary, I haven't tested on a clean system
-(they don't appear necessary as I've run make clean in the kernel tree.)
-```
-make prepare
-make scripts
-```
-
 
 cd back to this project.
 
